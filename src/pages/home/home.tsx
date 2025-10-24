@@ -66,7 +66,13 @@ function Home() {
         >Projetos</h1>
       <div
         ref={projetosRef}
-        className="scroll-mt-24 px-4 py-8 grid justify-center gap-6 grid-cols-[repeat(auto-fit,minmax(250px,1fr))]">
+        className="scroll-mt-24 
+        px-4 py-8 grid 
+         
+        gap-6 
+        grid-cols-[repeat(auto-fit,minmax(250px,1fr))]
+        justify-center
+        ">
         
         {filteredCards.map((card, index) => (
           <Link key={index} to={`/card/${index}`} className="w-full">
@@ -113,6 +119,7 @@ function Home() {
          <h1 className="  
         flex
         justify-center
+        items
         text-3xl md:text-4xl 
         font-bold 
         text-white mb-4
