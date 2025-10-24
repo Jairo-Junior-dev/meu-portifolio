@@ -9,12 +9,13 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d dist"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
     "gsap": "^3.13.0",
+    "hamburger-react": "^2.5.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-player": "^3.3.2",
