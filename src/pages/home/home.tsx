@@ -7,12 +7,16 @@ import { findByTerm, findByTermModal } from "../../components/search/PrcurarCard
 import { Link } from "react-router-dom";
 import { Header } from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
+import SectionsHome from "./sections/SectionsHome";
+import TypeProject from "../../components/header/card/Categoria";
 
 function Home() {
   const [termo, setTermo] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [filters, setFilters] = useState({ nome: "", categoriaProjeto: "", status: "" });
- // 🔹 Refs das seções
+ 
+ 
+  // 🔹 Refs das seções
   const projetosRef = useRef<HTMLDivElement | null>(null);
   const sobreRef = useRef<HTMLDivElement | null>(null);
 
@@ -50,9 +54,20 @@ function Home() {
       </div>
 
       {/* Grid de cards fluido */}
+      <h1 className="  
+        flex
+        mt-6
+        justify-center
+        text-3xl md:text-4xl 
+        font-bold 
+        text-white mb-4
+        bg-indigo-700
+        "
+        >Projetos</h1>
       <div
         ref={projetosRef}
         className="scroll-mt-24 px-4 py-8 grid justify-center gap-6 grid-cols-[repeat(auto-fit,minmax(250px,1fr))]">
+        
         {filteredCards.map((card, index) => (
           <Link key={index} to={`/card/${index}`} className="w-full">
             <Card
@@ -64,7 +79,50 @@ function Home() {
           </Link>
         ))}
       </div>
+      {/* Grid de cards fluido Section Java*/}
+        
+        <h1 className="  
+        flex
+        justify-center
+        text-3xl md:text-4xl 
+        font-bold 
+        text-white mb-4
+        bg-indigo-700
+        "
+        >Projeto {TypeProject.JAVA}</h1>
+        <SectionsHome 
+          filteredCards={cards} 
+          categoria ={TypeProject.JAVA}
+        />
+      {/* Grid de cards fluido Section Java*/}
+        
+        <h1 className="  
+        flex
+        justify-center
+        text-3xl md:text-4xl 
+        font-bold 
+        text-white mb-4
+        bg-indigo-700
+        "
+        >Projeto {TypeProject.SPRING_BOOT}</h1>
+        <SectionsHome 
+          filteredCards={cards} 
+          categoria ={TypeProject.SPRING_BOOT}
+        />
 
+         <h1 className="  
+        flex
+        justify-center
+        text-3xl md:text-4xl 
+        font-bold 
+        text-white mb-4
+        bg-indigo-700
+        "
+        >Projeto {TypeProject.SERVIDOR}</h1>
+        <SectionsHome 
+          categoria ={TypeProject.SERVIDOR}
+          filteredCards={cards} 
+        />
       {/* Modal de filtros */}
       <FilterModal
         isOpen={isOpen}
