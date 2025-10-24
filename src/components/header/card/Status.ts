@@ -1,4 +1,4 @@
-const enum Status {
+ enum Status {
   AFAZER = "A FAZER",
   FAZENDO="Fazendo",
   FEITO = "Feito",
