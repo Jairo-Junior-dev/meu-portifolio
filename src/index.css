@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  @apply m-0 font-sans;
+  --tw-bg-opacity: 1;
+    background-color: rgb(23 37 84 / var(--tw-bg-opacity, 1))
+}
+
+
+:root {
+  /* Cor principal dos botões */
+  --media-primary-color: #ff0044;
+
+  /* Cor quando o botão está ativo */
+  --media-accent-color: #00eaff;
+
+  /* Cor do ícone dentro do botão */
+  --media-icon-color: white;
+
+  /* Fundo da barra de controle */
+  --media-control-background: rgba(0, 0, 0, 0.7);
+
+  /* Fundo da barra de progresso */
+  --media-range-track-color: rgba(255, 255, 255, 0.2);
+
+  /* Cor da barra já reproduzida */
+  --media-range-bar-color: #ff0044;
+
+  /* Cor do círculo (thumb) */
+  --media-range-thumb-color: #fff;
+}
