@@ -1,4 +1,4 @@
-const enum TypeProject {
+ enum TypeProject {
   JAVA = "Java",
   SERVIDOR="Servidor",
   PHP = "Php",
