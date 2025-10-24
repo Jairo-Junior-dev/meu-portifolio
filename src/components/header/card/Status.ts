@@ -1,4 +1,4 @@
- enum Status {
+ const enum Status {
   AFAZER = "A FAZER",
   FAZENDO="Fazendo",
   FEITO = "Feito",
