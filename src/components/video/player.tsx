@@ -31,7 +31,6 @@ import ReactPlayer from 'react-player';
         style={{
           width: "100%",
           height: "100%",
-          "--controls": "none",
         }}>
           
         </ReactPlayer>
