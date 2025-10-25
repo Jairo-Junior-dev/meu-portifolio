@@ -3,6 +3,8 @@ import github from "../../../src/assets/github.png";
 import user from "../../../src/assets/user.png";
 import cards from "../../components/mock/cards";
 import { getColor } from "../../components/search/PrcurarCard";
+
+
 export default function CardDetail() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
@@ -34,6 +36,7 @@ export default function CardDetail() {
       {/* Card metade/metade */}
       <div className="bg-white shadow-lg rounded-2xl overflow-hidden flex flex-col md:flex-row h-full">
         {/* Metade direita: imagem */}
+
         <div className="md:w-1/2">
           <img
             src={card.image}

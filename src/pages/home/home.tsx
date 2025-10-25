@@ -1,14 +1,14 @@
 import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import Footer from "../../components/footer/Footer";
 import Card from '../../components/header/card/Card';
+import TypeProject from "../../components/header/card/Categoria";
 import { FilterModal } from "../../components/header/card/Modal";
+import { Header } from "../../components/header/Header";
 import Hero from "../../components/header/hero/Hero";
 import cards from '../../components/mock/cards';
 import { findByTerm, findByTermModal } from "../../components/search/PrcurarCard";
-import { Link } from "react-router-dom";
-import { Header } from "../../components/header/Header";
-import Footer from "../../components/footer/Footer";
 import SectionsHome from "./sections/SectionsHome";
-import TypeProject from "../../components/header/card/Categoria";
 
 function Home() {
   const [termo, setTermo] = useState("");
@@ -36,6 +36,7 @@ function Home() {
       <Hero   /> 
       </div>
       {/* Campo de busca + botão */}
+      
       <div className="flex flex-col md:flex-row justify-center items-center mt-6 gap-4 px-4">
         <input
           type="text"
@@ -59,23 +60,23 @@ function Home() {
         mt-6
         justify-center
         text-3xl md:text-4xl 
-        font-bold 
+        font-bold  
         text-white mb-4
         bg-indigo-700
+        
         "
         >Projetos</h1>
       <div
         ref={projetosRef}
         className="scroll-mt-24 
         px-4 py-8 grid 
-         
         gap-6 
         grid-cols-[repeat(auto-fit,minmax(250px,1fr))]
-        justify-center
+        
         ">
         
         {filteredCards.map((card, index) => (
-          <Link key={index} to={`/card/${index}`} className="w-full">
+          <Link key={index} to={`/card/${index}`} className=" flex w-full md:justify-center">
             <Card
               nome={card.nome}
               categoriaProjeto={card.categoriaProjeto}
@@ -112,10 +113,24 @@ function Home() {
         "
         >Projeto {TypeProject.SPRING_BOOT}</h1>
         <SectionsHome 
+          
           filteredCards={cards} 
           categoria ={TypeProject.SPRING_BOOT}
         />
-
+         <h1 className="  
+        flex
+        justify-center
+        items
+        text-3xl md:text-4xl 
+        font-bold 
+        text-white mb-4
+        bg-indigo-700
+        "
+        >Projeto {TypeProject.ANGULAR}</h1>
+        <SectionsHome 
+          categoria ={TypeProject.ANGULAR}
+          filteredCards={cards} 
+        />
          <h1 className="  
         flex
         justify-center
